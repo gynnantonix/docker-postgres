@@ -1,0 +1,16 @@
+{
+  "name": "postgres-docker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "cd pgadmin && sudo chown -R $USER * && rm -r pgadmin4.db sessions storage",
+    "start": "docker compose up --detach",
+    "stop": "docker compose down",
+    "logs": "docker compose logs --follow"
+  },
+  "keywords": [],
+  "author": "Catherine Mitchell",
+  "license": "ISC"
+}
