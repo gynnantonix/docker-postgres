@@ -21,3 +21,5 @@ services:
             - type: bind
               source: ./pgadmin
               target: /var/lib/pgadmin
+        depends_on: 
+            - db
