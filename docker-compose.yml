@@ -7,8 +7,13 @@ services:
         environment:
             POSTGRES_PASSWORD: pg_passWRD
             POSTGRES_USER: admin
+            PGDATA: /mnt/postgres/data
         ports:
             - "5432:5432"
+        volumes:
+            - type: bind
+              source: ./postgres
+              target: /mnt/postgres
     pgadmin:
         image: dpage/pgadmin4
         environment:
@@ -23,3 +28,5 @@ services:
               target: /var/lib/pgadmin
         depends_on: 
             - db
+        logging:
+            driver: none
